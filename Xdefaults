@@ -1,0 +1,4 @@
+XTerm*loginShell:true
+XTerm*VT100*foreground: gray90
+XTerm*VT100*background: black
+XTerm.vt100.bellIsUrgent: true
