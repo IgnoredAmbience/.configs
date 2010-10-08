@@ -8,3 +8,6 @@ syntax enable
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 set ruler
+set secure
+set wildignore=*.o,*.pyc,*.pdf,*.class
+set viminfo=""
