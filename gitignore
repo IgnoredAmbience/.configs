@@ -1,1 +1,8 @@
 *.swp
+*.o
+*.core
+
+# TeX detritus
+*.pdf
+*.aux
+*.log
