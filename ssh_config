@@ -1,0 +1,44 @@
+Host server
+  HostName 192.168.0.10
+  Port 2022
+
+Host server-remote
+  HostName server.pythonmoo.co.uk
+  Port 2022
+  DynamicForward 1080
+
+Host server-proxy
+  HostName 127.0.0.1
+  Port 2022
+  ProxyCommand corkscrew server.pythonmoo.co.uk 80 %h %p
+  DynamicForward 1080
+
+Host opls
+  HostName bio.positive-dedicated.net
+  User thomaswood
+
+Host osm
+  HostName dev.openstreetmap.org
+  User edgemaster
+
+Host errol
+  HostName errol.openstreetmap.org
+  User edgemaster
+
+Host doc
+  HostName shell1.doc.ic.ac.uk
+#  HostName vector10.doc.ic.ac.uk
+  User tw1509
+  ForwardX11 yes
+  ForwardX11Trusted yes
+
+Host vector
+  HostName vector10.doc.ic.ac.uk
+  User tw1509
+  ForwardX11 yes
+  ForwardX11Trusted yes
+
+Host fellw
+  HostName dougal.union.ic.ac.uk
+  User tw1509
+
