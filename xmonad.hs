@@ -21,6 +21,7 @@ main = do
       , modMask = mod4Mask     -- Rebind Mod to the Windows key
       , normalBorderColor = "#000000"
       , focusedBorderColor = "#ee9a00"
+      , terminal = "xterm"
       } `additionalKeys`
       [ ((mod4Mask, xK_z), spawn "xlock")
       , ((mod4Mask, xK_n), spawn "exaile --next")
