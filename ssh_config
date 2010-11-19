@@ -31,6 +31,7 @@ Host doc
   User tw1509
   ForwardX11 yes
   ForwardX11Trusted yes
+  ForwardAgent yes
 
 Host vector
   HostName vector10.doc.ic.ac.uk
