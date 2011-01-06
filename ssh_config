@@ -32,6 +32,7 @@ Host doc
   ForwardX11 yes
   ForwardX11Trusted yes
   ForwardAgent yes
+  DynamicForward 1081
 
 Host vector
   HostName vector10.doc.ic.ac.uk
