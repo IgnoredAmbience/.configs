@@ -2,3 +2,8 @@ XTerm*vt100.loginShell:true
 XTerm*vt100.foreground: gray
 XTerm*vt100.background: black
 XTerm*vt100.bellIsUrgent: true
+XTerm*vt100.allowTcapOps: true
+XTerm*faceName: 'DejaVu Sans Mono:style=Book'
+XTerm*faceSize: 9
+XTerm*termName: xterm-256color
+
