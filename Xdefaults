@@ -6,4 +6,8 @@ XTerm*vt100.allowTcapOps: true
 XTerm*faceName: 'DejaVu Sans Mono:style=Book'
 XTerm*faceSize: 9
 XTerm*termName: xterm-256color
+XTerm*scrollbar.background: black
+XTerm*scrollbar.foreground: gray
+XTerm*scrollbar.width: 10
+XTerm*scrollbar.thumb: dimple1
 
