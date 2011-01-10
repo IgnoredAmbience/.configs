@@ -3,10 +3,13 @@
 # sh/ksh initialization
 
 PATH=$HOME/bin:/usr/local/jdk-1.7.0/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:.
-DIST_MIRRORSERVICE=ftp://ftp.mirrorservice.org/pub/OpenBSD
-DIST_BYTEMARK=ftp://mirror.bytemark.co.uk/pub/OpenBSD
-DIST_DEFAULT=$DIST_MIRRORSERVICE/snapshots
-PKG_PATH=$DIST_DEFAULT/packages/amd64/
+
+DIST_SERVER_MIRRORSERVICE=ftp://ftp.mirrorservice.org/pub/OpenBSD
+DIST_SERVER_BYTEMARK=ftp://mirror.bytemark.co.uk/pub/OpenBSD
+DIST_SERVER=$DIST_SERVER_MIRRORSERVICE
+
+DIST_RELEASE=snapshots
+PKG_PATH=$DIST_SERVER/$DIST_RELEASE/packages/`uname -m`/
 
 SVN_EDITOR=vim
 GIT_EDITOR=vim
