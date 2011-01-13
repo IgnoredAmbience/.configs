@@ -1,3 +1,6 @@
 [submodule "prolog.vim"]
 	path = prolog.vim
 	url = https://github.com/adimit/prolog.vim.git
+[submodule "inkpot.vim"]
+	path = inkpot.vim
+	url = https://github.com/ciaranm/inkpot.git
