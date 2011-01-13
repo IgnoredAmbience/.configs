@@ -1,0 +1,1 @@
+../../prolog.vim/syntax/prolog.vim
