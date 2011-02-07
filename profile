@@ -2,7 +2,7 @@
 #
 # sh/ksh initialization
 
-PATH=$HOME/bin:/usr/local/jdk-1.7.0/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:.
+PATH=$HOME/bin:$HOME/ic/pintos/src/utils:/usr/local/jdk-1.7.0/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
 
 DIST_SERVER_MIRRORSERVICE=ftp://ftp.mirrorservice.org/pub/OpenBSD
 DIST_SERVER_BYTEMARK=ftp://mirror.bytemark.co.uk/pub/OpenBSD
@@ -20,8 +20,9 @@ case $TERM in
   xterm*)
     # Set xterm title to user@host: pwd
     # Set shell prompt to \a \$
-    # (ASCII bell for xmobar's alerter, \$ is default prompt)
-    PS1="]0;\u@\h: \w\a\\\$ "
+    # ASCII bell for xmobar's alerter, \$ is default prompt
+    # \[ \] disable character counting for enclosed section
+    PS1='\[]0;\u@\h: \w\a\]\$ '
     ;;
   *)
     ;;

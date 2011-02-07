@@ -11,6 +11,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 set ruler
 set wildignore=*.o,*.pyc,*.pdf,*.class,*.aux,*.hi
 set viminfo=""
+set tags=./tags;
 
 let g:tex_flavor='latex'
 
