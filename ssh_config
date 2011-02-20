@@ -39,6 +39,7 @@ Host vector
   User tw1509
   ForwardX11 yes
   ForwardX11Trusted yes
+  Compression yes
 
 Host fellw
   HostName dougal.union.ic.ac.uk
