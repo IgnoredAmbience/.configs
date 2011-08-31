@@ -27,10 +27,10 @@ function! LoadTemplate()
 endfunction
 autocmd! BufNewFile * call LoadTemplate()
 
-"Jump between %VAR% placeholders in Normal mode with <Ctrl-p>
-nnoremap <c-p> /%\u.\{-1,}%<cr>c/%/e<cr>
-"Jump between %VAR% placeholders in Insert mode with <Ctrl-p>
-inoremap <c-p> <ESC>/%\u.\{-1,}%<cr>c/%/e<cr>
+augroup myvimrchooks
+  au!
+  autocmd bufwritepost .vimrc source ~/.vimrc | redraw | echo 'vimrc reloaded'
+augroup END
 
 set secure
 
