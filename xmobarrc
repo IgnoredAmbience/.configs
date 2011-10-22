@@ -1,15 +1,18 @@
-Config {
-  font = "-*-Fixed-*-R-Normal-*-10-*-*-*-*-*-*-*",
-  bgColor = "black",
-  fgColor = "grey",
-  position = TopW L 100,
-  lowerOnStart = True,
-  commands = [
-    Run Date "%a %b %d %T" "date" 1,
-    Run Com "/usr/sbin/apm" [] "" 60,
-    Run StdinReader
-  ] ,
-  sepChar = "%",
-  alignSep = "}{",
-  template = "%StdinReader% }{ %/usr/sbin/apm% | <fc=#ee9a00>%date%</fc>"
-}
+Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "gray"
+       , position = Top
+       , lowerOnStart = True
+       , commands = [ Run Weather "EGLC" ["-t","<tempC>C","-L","10","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
+                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+    		    , Run Date "%a %b %d %Y %H:%M:%S" "date" 10
+                    , Run StdinReader
+                    , Run BatteryP ["C23B"] ["-t", "AC: <acstatus> Bat: <left>% <timeleft>", "--", "-f", "C23A/online"] 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %battery% | %cpu% | %memory% %swap% | %eth0% | <fc=#ee9a00>%date%</fc> | %EGLC%"
+       }
