@@ -1,1 +1,0 @@
-../../inkpot.vim/colors/inkpot.vim
