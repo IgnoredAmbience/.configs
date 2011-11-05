@@ -1,22 +1,19 @@
 ControlMaster auto
 ControlPath /tmp/ssh-%h-%p-%r
-ControlPersist 600
 IdentityFile ~/.ssh/id_rsa
-IdentityFile ~/.ssh/id_rsa2
+Compression yes
 
 Host server
-  HostName 192.168.0.10
-  Port 2022
-
-Host server-remote
   HostName pythonmoo.co.uk
   Port 2022
+  User thomas
 
 Host server-proxy
   HostName 127.0.0.1
   Port 2022
   ProxyCommand corkscrew server.pythonmoo.co.uk 80 %h %p
   DynamicForward 1080
+  User thomas
 
 Host opls
   HostName bio.positive-dedicated.net
@@ -31,14 +28,16 @@ Host errol
   User edgemaster
 
 Host doc
-  HostName shell2.doc.ic.ac.uk
-  User tw1509
-  ForwardX11 yes
-  ForwardX11Trusted yes
-  Compression yes
-  ForwardAgent yes
+  HostName shell3.doc.ic.ac.uk
 
-Host fellw
+Host dougal
   HostName dougal.union.ic.ac.uk
   User tw1509
 
+Host doc *.doc.ic.ac.uk
+  User tw1509
+  ForwardX11 yes
+
+Host bitbucket.org github.com
+  User git
+  IdentityFile ~/.ssh/id_git
