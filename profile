@@ -6,7 +6,7 @@ PATH=$HOME/bin:$HOME/ic/pintos/src/utils:/usr/local/jdk-1.7.0/bin:/bin:/sbin:/us
 
 DIST_SERVER_MIRRORSERVICE=ftp://ftp.mirrorservice.org/pub/OpenBSD
 DIST_SERVER_BYTEMARK=ftp://mirror.bytemark.co.uk/pub/OpenBSD
-DIST_SERVER=$DIST_SERVER_MIRRORSERVICE
+DIST_SERVER=$DIST_SERVER_BYTEMARK
 
 DIST_RELEASE=snapshots
 PKG_PATH=$DIST_SERVER/$DIST_RELEASE/packages/`uname -m`/
