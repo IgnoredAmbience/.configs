@@ -27,5 +27,5 @@ main = do
       , ((mod4Mask, xK_n), spawn "exaile --next")
       , ((mod4Mask, xK_b), spawn "exaile --play-pause")
       , ((mod4Mask, xK_m), spawn "exaile --toggle-visible")
-      , ((mod4Mask, xK_p), spawn "dmenu_run -fn -misc-fixed-*-*-*-*-10-*-*-*-*-*-*-* -nb black -nf gray -sf '#ee9a00' -sb black")
+      , ((mod4Mask, xK_p), spawn "~/bin/dmenu_run -fn -misc-fixed-*-*-*-*-10-*-*-*-*-*-*-* -nb black -nf gray -sf '#ee9a00' -sb black")
       ]
