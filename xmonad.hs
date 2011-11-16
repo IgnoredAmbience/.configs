@@ -1,7 +1,9 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
+import XMonad.Layout.NoBorders
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
@@ -11,8 +13,8 @@ main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ withUrgencyHook NoUrgencyHook
            $ defaultConfig
-      { manageHook = manageDocks <+> manageHook defaultConfig
-      , layoutHook = avoidStruts  $  layoutHook defaultConfig
+      { manageHook = isFullscreen --> doFullFloat <+> manageDocks <+> manageHook defaultConfig
+      , layoutHook = smartBorders $ avoidStruts  $  layoutHook defaultConfig
       , logHook    = dynamicLogWithPP $ sjanssenPP
         { ppOutput = hPutStrLn xmproc
         , ppOrder  = \(ws:_:t:_) -> [ws,t]

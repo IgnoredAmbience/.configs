@@ -18,7 +18,7 @@ set ruler
 set viminfo=""
 set tags=./tags;,./TAGS;
 
-let g:tex_flavor='latex'
+let g:tex_flavor='pdflatex'
 
 "File Templates
 function! LoadTemplate()
