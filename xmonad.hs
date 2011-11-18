@@ -13,7 +13,7 @@ main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ withUrgencyHook NoUrgencyHook
            $ defaultConfig
-      { manageHook = isFullscreen --> doFullFloat <+> manageDocks <+> manageHook defaultConfig
+      { manageHook = manageDocks <+> manageHook defaultConfig
       , layoutHook = smartBorders $ avoidStruts  $  layoutHook defaultConfig
       , logHook    = dynamicLogWithPP $ sjanssenPP
         { ppOutput = hPutStrLn xmproc
