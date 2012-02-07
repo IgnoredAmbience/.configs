@@ -7,6 +7,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
+import XMonad.Hooks.SetWMName
 
 
 main = do
@@ -20,6 +21,7 @@ main = do
         , ppOrder  = \(ws:_:t:_) -> [ws,t]
         , ppUrgent = xmobarColor "#ee9a00" "" . xmobarStrip
         }
+      , startupHook = setWMName "LG3D"
       , modMask = mod4Mask     -- Rebind Mod to the Windows key
       , normalBorderColor = "#000000"
       , focusedBorderColor = "#ee9a00"
