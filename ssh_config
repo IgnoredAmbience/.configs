@@ -7,6 +7,7 @@ Host server
   HostName pythonmoo.co.uk
   Port 2022
   User thomas
+  DynamicForward 1080
 
 Host server-proxy
   HostName 127.0.0.1
@@ -37,6 +38,7 @@ Host dougal
 Host doc *.doc.ic.ac.uk
   User tw1509
   ForwardX11 yes
+  DynamicForward 1081
 
 Host bitbucket.org github.com
   User git

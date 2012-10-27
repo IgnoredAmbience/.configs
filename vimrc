@@ -1,15 +1,19 @@
 call pathogen#infect()
-filetype plugin indent on
+
+" Tabbing
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set textwidth=80
 set background=dark
+
+" Colours / Filetypes
 colorscheme inkpot
 syntax enable
-
+filetype plugin indent on
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
+" Tab completion
 set wildignore=*.o,*.pyc,*.pdf,*.class,*.aux,*.hi
 set wildmode=longest,list,full
 set wildmenu
@@ -17,6 +21,9 @@ set wildmenu
 set ruler
 set viminfo=""
 set tags=./tags;,./TAGS;
+
+set mouse=a
+set ttymouse=xterm2
 
 let g:tex_flavor='pdflatex'
 

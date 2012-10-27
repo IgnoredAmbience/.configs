@@ -3,6 +3,5 @@
 *.core
 
 # TeX detritus
-*.pdf
 *.aux
 *.log

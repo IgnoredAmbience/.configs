@@ -1,4 +1,4 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "xft:dejavu sans-6"
        , bgColor = "black"
        , fgColor = "gray"
        , position = Top
@@ -10,8 +10,10 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run StdinReader
                     , Run BatteryP ["C23B"] ["-t", "AC: <acstatus> Bat: <left>% <timeleft>", "--", "-f", "C23A/online"] 10
                     , Run Wireless "wlan0" [] 100
+                    , Run MPD ["-t", "<statei> <artist> - <title>", "--", "-P",
+"▶", "-S", "■"] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %battery% | %wlan0wi% | %cpu% %memory% %swap% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% } %mpd% { %battery% | %wlan0wi% | %cpu% %memory% %swap% | <fc=#ee9a00>%date%</fc>"
        }

@@ -4,6 +4,6 @@ XTerm*vt100.background: black
 XTerm*vt100.bellIsUrgent: true
 XTerm*vt100.allowTcapOps: true
 XTerm*faceName: 'DejaVu Sans Mono:style=Book'
-XTerm*faceSize: 9
+XTerm*faceSize: 8
 XTerm*termName: xterm-256color
 XTerm*scrollBar: false
