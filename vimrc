@@ -9,6 +9,9 @@ colorscheme inkpot
 syntax enable
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+augroup filetypedetect
+  au! BufRead,BufNewFile *.nc set filetype=nc
+augroup END
 
 set wildignore=*.o,*.pyc,*.pdf,*.class,*.aux,*.hi
 set wildmode=longest,list,full

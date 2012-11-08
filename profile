@@ -16,6 +16,13 @@ case $TERM in
     ;;
 esac
 
-alias git=hub
+alias git="hub"
+alias ls="ls -F --color"
+alias l="ls"
+alias ll="l -l"
+alias la="l -A"
+alias sicstus="rlwrap sicstus"
+alias cwb="rlwrap cwb"
+alias git?="git status"
 
 export PATH HOME TERM SVN_EDITOR GIT_EDITOR
