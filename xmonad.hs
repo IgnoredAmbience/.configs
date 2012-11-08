@@ -27,9 +27,11 @@ main = do
       , focusedBorderColor = "#ee9a00"
       } `additionalKeys`
       [ ((mod4Mask, xK_z), spawn "slimlock")
-      , ((mod4Mask, xK_n), spawn "exaile --next --start-anyway")
-      , ((mod4Mask, xK_b), spawn "exaile --play-pause --start-anyway")
-      , ((mod4Mask, xK_m), spawn "exaile --toggle-visible --start-anyway")
+--      , ((mod4Mask, xK_n), spawn "exaile --next --start-anyway")
+--      , ((mod4Mask, xK_b), spawn "exaile --play-pause --start-anyway")
+--      , ((mod4Mask, xK_m), spawn "exaile --toggle-visible --start-anyway")
+      , ((mod4Mask, xK_n), spawn "mpc next")
+      , ((mod4Mask, xK_b), spawn "mpc toggle")
       , ((mod4Mask, xK_p), spawn "dmenu_run -fn -*-*-*-*-*-12-*-*-*-*-*-*-* -nb black -nf gray -sf '#ee9a00' -sb black")
       , ((0, 0x1008FF2F),  spawn "sudo pm-suspend")
       ]
