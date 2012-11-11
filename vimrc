@@ -12,6 +12,9 @@ colorscheme inkpot
 syntax enable
 filetype plugin indent on
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+augroup filetypedetect
+  au! BufRead,BufNewFile *.nc set filetype=nc
+augroup END
 
 " Tab completion
 set wildignore=*.o,*.pyc,*.pdf,*.class,*.aux,*.hi
