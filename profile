@@ -2,6 +2,7 @@ PATH=$HOME/bin:$HOME/ic/pintos/src/utils:/usr/bin/core_perl:/usr/local/jdk-1.7.0
 
 SVN_EDITOR=vim
 GIT_EDITOR=vim
+PRINTER=ICTMono-2s
 
 case $TERM in
   xterm*)

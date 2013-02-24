@@ -5,3 +5,6 @@
 # TeX detritus
 *.aux
 *.log
+
+*.gz
+*.tgz
