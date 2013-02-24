@@ -1,5 +1,3 @@
-. /etc/X11/xinit/xinitrc.d/pulseaudio
-
 [ -f /etc/profile ] && . /etc/profile
 
 PATH=~/bin:$PATH
@@ -11,13 +9,7 @@ feh --bg-scale ~/pictures/London-skynet.jpg &
 
 # These should really be on the login shell...
 mpd &
-pidof mpdscribble >& /dev/null
-if [ $? -ne 0 ]; then
-  mpdscribble &
-fi
-
-xsnow -nosanta -notrees &
-mpd &
+mpdscribble &
 
 # Recompile if required
 

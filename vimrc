@@ -29,6 +29,9 @@ set tags=./tags;,./TAGS;
 set mouse=a
 set ttymouse=xterm2
 
+set hlsearch
+set incsearch
+
 let g:tex_flavor='pdflatex'
 
 "File Templates
