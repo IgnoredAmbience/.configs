@@ -17,7 +17,6 @@ case $TERM in
     ;;
 esac
 
-alias git="hub"
 alias ls="ls -F --color"
 alias l="ls"
 alias ll="l -l"
