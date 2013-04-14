@@ -34,6 +34,20 @@ set incsearch
 
 let g:tex_flavor='pdflatex'
 
+"Trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+function! FixTrailingWhitespace()
+  let l:winview = winsaveview()
+  %s/\s\+$//e
+  call winrestview(l:winview)
+endfunction
+autocmd BufWritePre * :call FixTrailingWhitespace()
+
 "File Templates
 function! LoadTemplate()
   silent! 0r ~/.vim/skel/tmpl.%:e
