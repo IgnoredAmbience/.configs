@@ -13,9 +13,6 @@ colorscheme inkpot
 syntax enable
 filetype plugin indent on
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-augroup filetypedetect
-  au! BufRead,BufNewFile *.nc set filetype=nc
-augroup END
 
 " Tab completion
 set wildignore=*.o,*.pyc,*.pdf,*.class,*.aux,*.hi
@@ -45,10 +42,10 @@ autocmd BufWinLeave * call clearmatches()
 " Fix trailing whitespace only on lines in range between entering and leaving insert mode
 autocmd InsertEnter * let b:insert_start = line('.')
 autocmd InsertLeave * call s:StripTrailingWhitespaces()
-fun! s:StripTrailingWhitespaces()
-  let original_cursor = getpos('.')
+function! s:StripTrailingWhitespaces()
+  let l:winview = winsaveview()
   exe b:insert_start . ',.s/\s\+$//e'
-  call setpos('.', original_cursor)
+  call winrestview(l:winview)
 endfun
 
 "File Templates
