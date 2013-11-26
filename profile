@@ -1,5 +1,3 @@
-PATH=$HOME/bin:$HOME/ic/pintos/src/utils:/usr/bin/core_perl:/usr/local/jdk-1.7.0/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
-
 SVN_EDITOR=vim
 GIT_EDITOR=vim
 PRINTER=ICTMono-2s

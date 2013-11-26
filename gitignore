@@ -5,6 +5,11 @@
 # TeX detritus
 *.aux
 *.log
+*.fls
+*.out
+*.fdb_latexmk
+*.bbl
+*.blg
 
 *.gz
 *.tgz
