@@ -1,10 +1,11 @@
-call pathogen#infect()
+execute pathogen#infect()
+execute "Helptags"
 
 " Tabbing
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set textwidth=120
+set textwidth=100
 set colorcolumn=+1
 set background=dark
 
@@ -25,6 +26,8 @@ set tags=./tags;,./TAGS;
 
 set mouse=a
 set ttymouse=xterm2
+
+set guioptions=acimg
 
 set hlsearch
 set incsearch
