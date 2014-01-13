@@ -1,13 +1,30 @@
 \documentclass[a4paper]{article}
-\usepackage{fullpage, titling, amsmath, footnote, listings}
-\makesavenoteenv{tabular}
-\setlength{\droptitle}{-50pt}
+\usepackage{amssymb,amsmath,amsfonts,amsthm,latexsym,wasysym,mathrsfs,textcomp,stmaryrd}
+\usepackage{mathtools}
+\usepackage{xspace}
+\usepackage{mathpartir}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{url}
+\usepackage[colorlinks]{hyperref}
+
+% Automatic micro-spacing changes to improve document readability
+\usepackage[tracking=true]{microtype}
+
+% bibliography, use biblatex
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{~/papers/bibliography.bib}
 
 \title{%TITLE%}
 \author{Thomas Wood}
 
 \begin{document}
 \maketitle
+
+
+
+
+\printbibliography
 
 \end{document}
 
