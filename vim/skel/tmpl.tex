@@ -1,8 +1,6 @@
 \documentclass[a4paper]{article}
-\usepackage{amssymb,amsmath,amsfonts,amsthm,latexsym,wasysym,mathrsfs,textcomp,stmaryrd}
-\usepackage{mathtools}
+\usepackage{fullpage}
 \usepackage{xspace}
-\usepackage{mathpartir}
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
 \usepackage{url}
 \usepackage[colorlinks]{hyperref}
@@ -12,8 +10,6 @@
 
 % bibliography, use biblatex
 \usepackage[utf8]{inputenc}
-\usepackage[backend=biber]{biblatex}
-\addbibresource{~/papers/bibliography.bib}
 
 \title{%TITLE%}
 \author{Thomas Wood}
@@ -21,10 +17,8 @@
 \begin{document}
 \maketitle
 
-
-
-
-\printbibliography
+\bibliographystyle{plain}
+\bibliography{biblio}
 
 \end{document}
 

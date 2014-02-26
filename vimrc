@@ -5,15 +5,21 @@ execute "Helptags"
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set textwidth=100
+set textwidth=120
 set colorcolumn=+1
 set background=dark
 
 " Colours / Filetypes
+let g:inkpot_black_background = 1
 colorscheme inkpot
+
 syntax enable
 filetype plugin indent on
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" Coq
+let g:CoqIDEDefaultMap = 1
+highlight SentToCoq ctermbg=234
 
 " Tab completion
 set wildignore=*.o,*.pyc,*.pdf,*.class,*.aux,*.hi
