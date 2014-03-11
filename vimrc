@@ -35,7 +35,11 @@ set ttymouse=xterm2
 
 set guioptions=acimg
 
+" Search highlight
 set hlsearch
+" Cancel search highlight with \\
+map <silent> <Leader><Leader> :noh<cr>
+
 set incsearch
 
 let g:tex_flavor='pdflatex'
@@ -43,19 +47,23 @@ let g:tex_flavor='pdflatex'
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+augroup highlight_whitespace
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
+augroup END
 
 " Fix trailing whitespace only on lines in range between entering and leaving insert mode
-autocmd InsertEnter * let b:insert_start = line('.')
-autocmd InsertLeave * call s:StripTrailingWhitespaces()
 function! s:StripTrailingWhitespaces()
   let l:winview = winsaveview()
   exe b:insert_start . ',.s/\s\+$//e'
   call winrestview(l:winview)
 endfun
+augroup strip_whitespace
+  autocmd InsertEnter * let b:insert_start = line('.')
+  autocmd InsertLeave * call s:StripTrailingWhitespaces()
+augroup END
 
 "File Templates
 function! LoadTemplate()
@@ -63,7 +71,9 @@ function! LoadTemplate()
   " Highlight %VAR% placeholders with the Todo colour group
   syn match Todo "%\u\+%" containedIn=ALL
 endfunction
-autocmd! BufNewFile * call LoadTemplate()
+augroup file_templates
+  autocmd! BufNewFile * call LoadTemplate()
+augroup END
 
 augroup myvimrchooks
   au!
