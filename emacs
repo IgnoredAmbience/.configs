@@ -25,3 +25,4 @@
 (load "~/.emacs.d/ProofGeneral/generic/proof-site.el")
 (add-hook 'proof-mode-hook
   (lambda () (local-set-key '(meta tab) 'tag-complete-symbol)))
+(load "~/.emacs.d/cdlatex.el")
