@@ -16,3 +16,6 @@
 [submodule "vim/bundle/sudo.vim"]
 	path = vim/bundle/sudo.vim
 	url = git@github.com:vim-scripts/sudo.vim.git
+[submodule "emacs.d/ProofGeneral"]
+	path = emacs.d/ProofGeneral
+	url = git@github.com:edgemaster/ProofGeneral-patches.git

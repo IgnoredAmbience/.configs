@@ -1,3 +1,5 @@
 gitconfig
 .netrwhist
 vim/spell/*.spl
+emacs.d/auto-save-list
+emacs.d/elpa
