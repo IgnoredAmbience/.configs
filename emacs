@@ -28,5 +28,9 @@
 (load "~/.emacs.d/ProofGeneral/generic/proof-site.elc")
 (add-hook 'proof-mode-hook
   (lambda () (local-set-key '(meta tab) 'tag-complete-symbol)))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(load "~/.emacs.d/cdlatex.el")
+
+(require 'ox-reveal)
+(setq org-reveal-root "file:///homes/tw1509/reveal.js")
+(setq org-latex-create-formula-image-program 'dvipng)
