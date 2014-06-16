@@ -3,17 +3,15 @@ Config { font = "xft:dejavu sans-6"
        , fgColor = "gray"
        , position = Top
        , lowerOnStart = True
-       , commands = [ Run Cpu ["-t","C<total>%","-L","3","-H","50","--normal","green","--high","red"] 10
-                    , Run Memory ["-t","M<usedratio>%"] 10
-                    , Run Swap ["-t", "S<usedratio>%"] 10
-    		    , Run Date "%a %b %d %Y %H:%M:%S" "date" 10
+       , commands = [ Run Cpu ["-t","C<total>%","-L","3","-H","50","--normal","green","--high","red"] 600
+                    , Run Memory ["-t","M<usedratio>%"] 600
+    		    , Run Date "%a %b %d %Y %H:%M" "date" 600
+    		    , Run DateZone "%H:%M" "" "US/Pacific" "usdate" 600
                     , Run StdinReader
-                    , Run MPD ["-t", "<statei> <artist> - <title>", "--", "-P", "▶", "-S", "■"] 10
-                    , Run BatteryP ["BAT0"] ["-t", "AC: <acstatus> Bat: <left>% <timeleft>", "--", "-f", "AC0/online"] 10
-                    , Run Wireless "wlp2s0" [] 100
+                    , Run BatteryP ["BAT0","BAT1"] [] 600
                     , Run PipeReader ".xmobarmsg.fifo" "status"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% } %mpd% %status% { %battery% | %wlp2s0wi% | %cpu% %memory% %swap% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% } %status% { %battery% | %cpu% %memory% | <fc=#ee9a00>%date% %usdate%</fc>"
        }

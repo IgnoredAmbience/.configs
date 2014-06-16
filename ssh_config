@@ -38,7 +38,8 @@ Host dougal
 Host doc *.doc.ic.ac.uk
   User tw1509
   ForwardX11 yes
-  DynamicForward 1081
+  DynamicForward 8888
+  Compression yes
 
 Host bitbucket.org github.com
   User git

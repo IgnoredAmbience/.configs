@@ -22,6 +22,7 @@ main = do
     xmonad $ withUrgencyHook NoUrgencyHook
            $ defaultConfig
       { manageHook = manageDocks <+> manageHook defaultConfig
+      , handleEventHook = docksEventHook <+> handleEventHook defaultConfig
       , layoutHook = myLayoutHook
       , logHook    = dynamicLogWithPP $ sjanssenPP
         { ppOutput = hPutStrLn xmproc

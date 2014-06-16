@@ -7,7 +7,7 @@ fi
 
 [ -f /etc/profile ] && . /etc/profile
 
-PATH=~/bin:$PATH
+PATH=~/bin:~/.cabal/bin:$PATH
 
 eval `ssh-agent`
 #xsetroot -solid black
@@ -26,6 +26,9 @@ then
 fi
 
 export LIBOVERLAY_SCROLLBAR=0
+
+stalonetray &
+nm-applet &
 
 hostname -s > ~/public_html/where-in-labs
 xmonad

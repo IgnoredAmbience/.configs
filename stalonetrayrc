@@ -1,0 +1,7 @@
+background "#000001"
+geometry +1000+0
+grow_gravity E
+icon_size 1
+kludges force_icons_size
+window_strut none
+window_type dock

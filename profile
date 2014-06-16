@@ -23,4 +23,6 @@ alias sicstus="rlwrap sicstus"
 alias cwb="rlwrap cwb"
 alias git?="git status"
 
+PATH=~/bin:~/.cabal/bin:$PATH
+
 export PATH HOME TERM SVN_EDITOR GIT_EDITOR
