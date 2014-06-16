@@ -4,4 +4,4 @@
 
 [merge "verify"]
         name = merge and verify driver
-        driver = merge-and-verify-driver %A %O %B
+        driver = git-merge-and-verify-driver %A %O %B
