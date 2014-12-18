@@ -21,3 +21,6 @@
 *.gz
 *.tgz
 *~
+.pgconfig
+
+*.pyc

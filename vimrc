@@ -1,6 +1,9 @@
 execute pathogen#infect()
 execute "Helptags"
 
+" Set local leader to \ (as well as leader)
+let maplocalleader = ","
+
 " Tabbing
 set expandtab
 set shiftwidth=2
@@ -8,6 +11,7 @@ set softtabstop=2
 set textwidth=120
 set colorcolumn=+1
 set background=dark
+set modeline
 
 " Colours / Filetypes
 let g:inkpot_black_background = 1
@@ -17,9 +21,15 @@ syntax enable
 filetype plugin indent on
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-" Coq
-let g:CoqIDEDefaultMap = 1
-highlight SentToCoq ctermbg=234
+" Maps Coquille commands to CoqIDE default key bindings
+au FileType coq call coquille#CoqideMapping()
+let g:coquille_auto_move='true'
+let g:localvimrc_whitelist='/homes/tw1509/jscert_dev/coq/.*'
+
+" OCaml support
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+let g:syntastic_ocaml_checkers = ['merlin']
 
 " Tab completion
 set wildignore=*.o,*.pyc,*.pdf,*.class,*.aux,*.hi
