@@ -3,15 +3,15 @@ Config { font = "xft:dejavu sans-6"
        , fgColor = "gray"
        , position = Top
        , lowerOnStart = True
-       , commands = [ Run Cpu ["-t","C<total>%","-L","3","-H","50","--normal","green","--high","red"] 600
-                    , Run Memory ["-t","M<usedratio>%"] 600
-    		    , Run Date "%a %b %d %Y %H:%M" "date" 600
-    		    , Run DateZone "%H:%M" "" "US/Pacific" "usdate" 600
+       , commands = [ Run Cpu ["-t","C<total>%","-L","3","-H","50","--normal","green","--high","red"] 100
+                    , Run Memory ["-t","M<usedratio>%"] 100
+    		    , Run Date "%a %d %b %Y %H:%M:%S" "date" 10
+    		    , Run DateZone "%H:%M" "" "US/Pacific" "usdate" 10
                     , Run StdinReader
-                    , Run BatteryP ["BAT0","BAT1"] [] 600
+                    , Run Battery ["-t","<left>%<acstatus><timeleft>","--","-o","-","-O","+","-i",":"] 100
                     , Run PipeReader ".xmobarmsg.fifo" "status"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% } %status% { %battery% | %cpu% %memory% | <fc=#ee9a00>%date% %usdate%</fc>"
+       , template = "%StdinReader% } %status% { %battery% | %cpu% %memory% | <fc=#ee9a00>%date%</fc>"
        }

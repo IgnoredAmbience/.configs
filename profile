@@ -1,6 +1,7 @@
 SVN_EDITOR=vim
 GIT_EDITOR=vim
-PRINTER=ICTMono-2s
+PRINTER=DoCIPPMono
+CUPS_USER=tw1509
 
 case $TERM in
   xterm*)
@@ -23,6 +24,6 @@ alias sicstus="rlwrap sicstus"
 alias cwb="rlwrap cwb"
 alias git?="git status"
 
-PATH=~/bin:~/.cabal/bin:$PATH
+PATH=~/bin:~/.gem/ruby/2.2.0/bin:~/.cabal/bin:$PATH
 
-export PATH HOME TERM SVN_EDITOR GIT_EDITOR
+export PATH HOME TERM SVN_EDITOR GIT_EDITOR PRINTER CUPS_USER

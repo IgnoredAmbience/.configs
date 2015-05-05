@@ -1,5 +1,5 @@
-ControlMaster auto
-ControlPath /tmp/ssh-%h-%p-%r
+#ControlMaster auto
+#ControlPath /tmp/ssh-%h-%p-%r
 IdentityFile ~/.ssh/id_rsa
 Compression yes
 
@@ -38,9 +38,13 @@ Host dougal
 Host doc *.doc.ic.ac.uk
   User tw1509
   ForwardX11 yes
-  DynamicForward 8888
-  Compression yes
+  # Fails for somereason, use -D 9080 on cmdline instead
+  #DynamicForward 9080
 
 Host bitbucket.org github.com
   User git
   IdentityFile ~/.ssh/id_git
+
+Host gitlab-ci
+  HostName 146.169.46.217
+  User tw1509

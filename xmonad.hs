@@ -43,4 +43,5 @@ main = do
       , ((mod4Mask, xK_v), spawn "lastfm-love")
       , ((mod4Mask, xK_p), spawn ("dmenu_run" ++ dmenu_config))
       , ((mod4Mask, xK_s), sendMessage ToggleStruts)
+      , ((mod4Mask, xK_x), spawn "touchpad-toggle")
       ]

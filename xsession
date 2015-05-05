@@ -30,6 +30,4 @@ export LIBOVERLAY_SCROLLBAR=0
 stalonetray &
 nm-applet &
 
-hostname -s > ~/public_html/where-in-labs
-xmonad
-echo -n > ~/public_html/where-in-labs
+exec xmonad
