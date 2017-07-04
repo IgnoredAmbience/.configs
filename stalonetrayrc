@@ -1,7 +1,8 @@
-background "#000001"
-geometry +1000+0
+background "#000000"
+geometry 1x1+1109+0
 grow_gravity E
-icon_size 1
+icon_gravity E
+icon_size 16
 kludges force_icons_size
 window_strut none
 window_type dock

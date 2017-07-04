@@ -5,13 +5,15 @@ Config { font = "xft:dejavu sans-6"
        , lowerOnStart = True
        , commands = [ Run Cpu ["-t","C<total>%","-L","3","-H","50","--normal","green","--high","red"] 100
                     , Run Memory ["-t","M<usedratio>%"] 100
-    		    , Run Date "%a %d %b %Y %H:%M:%S" "date" 10
-    		    , Run DateZone "%H:%M" "" "US/Pacific" "usdate" 10
+    		    , Run Date "%a %d %b %Y" "date" 10
+    		    , Run DateZone "%H:%M" "" "America/Los_Angeles" "ustz" 10
+    		    , Run DateZone "%H:%M" "" "Europe/Paris" "eutz" 10
+    		    , Run DateZone "%H:%M:%S" "" "Europe/London" "uktz" 10
                     , Run StdinReader
                     , Run Battery ["-t","<left>%<acstatus><timeleft>","--","-o","-","-O","+","-i",":"] 100
-                    , Run PipeReader ".xmobarmsg.fifo" "status"
+                    , Run PipeReader "/home/thomas/.xmobarmsg.fifo" "status"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% } %status% { %battery% | %cpu% %memory% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% } %status% { %battery% | %cpu% %memory% | <fc=#ee9a00>%date%</fc> <fc=#00ff00>%uktz%</fc>"
        }

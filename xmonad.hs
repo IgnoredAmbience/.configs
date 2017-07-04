@@ -1,28 +1,32 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.MultiColumns
+import XMonad.Layout.WorkspaceDir
+import XMonad.Prompt
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import XMonad.Hooks.SetWMName
 
 orange = "#ee9a00"
-dmenu_config = " -fn -misc-fixed-*-*-*-*-10-*-*-*-*-*-*-* -nb black -nf gray -sf '" ++ orange ++ "' -sb black"
-myLayoutHook = smartBorders $ avoidStruts $ layoutHook defaultConfig ||| columns
+dmenu_config = " -fn 'dejavu sans-6' -nb black -nf gray -sf '" ++ orange ++ "' -sb black"
+myLayoutHook = workspaceDir "~" $ smartBorders $ avoidStruts $ layoutHook defaultConfig ||| columns
 --columns = ThreeColMid 1 (3/100) (1/3)
 columns = multiCol [1,1,0] 4 0.01 0.5
 
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ withUrgencyHook NoUrgencyHook
+           $ ewmh
            $ defaultConfig
       { manageHook = manageDocks <+> manageHook defaultConfig
-      , handleEventHook = docksEventHook <+> handleEventHook defaultConfig
+      , handleEventHook = fullscreenEventHook <+> docksEventHook <+> handleEventHook defaultConfig
       , layoutHook = myLayoutHook
       , logHook    = dynamicLogWithPP $ sjanssenPP
         { ppOutput = hPutStrLn xmproc
@@ -34,7 +38,7 @@ main = do
       , modMask = mod4Mask     -- Rebind Mod to the Windows key
       , normalBorderColor = "#262626"
       , focusedBorderColor = orange
-      , terminal = "xterm"
+      , terminal = "konsole"
       } `additionalKeys`
       [ ((mod4Mask, xK_z), spawn "xscreensaver-command -lock")
       , ((mod4Mask, xK_m), spawn "dmpc")
@@ -44,4 +48,5 @@ main = do
       , ((mod4Mask, xK_p), spawn ("dmenu_run" ++ dmenu_config))
       , ((mod4Mask, xK_s), sendMessage ToggleStruts)
       , ((mod4Mask, xK_x), spawn "touchpad-toggle")
+      , ((mod4Mask, xK_o), changeDir defaultXPConfig)
       ]
