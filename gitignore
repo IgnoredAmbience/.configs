@@ -1,4 +1,5 @@
-*.swp
+.*.swp
+.*.swo
 *.o
 *.core
 
@@ -21,6 +22,6 @@
 *.gz
 *.tgz
 *~
-.pgconfig
 
 *.pyc
+.ropeproject

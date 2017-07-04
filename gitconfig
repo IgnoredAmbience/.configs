@@ -8,7 +8,18 @@
 [merge]
 #	conflictstyle = diff3
 	tool = emerge
+	conflictstyle = diff3
 [diff]
 	tool = vimdiff
 [mergetool "emerge"]
 	path = /home/thomas/bin/git-emerge
+[branch]
+	autosetuprebase = always
+[push]
+	default = simple
+[rerere]
+	enabled = true
+[log]
+	follow = true
+[pull]
+	rebase = true
