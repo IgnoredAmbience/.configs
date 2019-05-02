@@ -16,3 +16,6 @@
 [submodule "vim/bundle/sudo.vim"]
 	path = vim/bundle/sudo.vim
 	url = git@github.com:vim-scripts/sudo.vim.git
+[submodule "vim/bundle/vim-dokuwiki"]
+	path = vim/bundle/vim-dokuwiki
+	url = git@github.com:IgnoredAmbience/vim-dokuwiki.git

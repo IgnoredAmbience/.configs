@@ -1,24 +1,7 @@
-ControlMaster auto
-ControlPath /tmp/ssh-%h-%p-%r
+#ControlMaster auto
+#ControlPath /tmp/ssh-%h-%p-%r
 IdentityFile ~/.ssh/id_rsa
-Compression yes
-
-Host server
-  HostName pythonmoo.co.uk
-  Port 2022
-  User thomas
-  DynamicForward 1080
-
-Host server-proxy
-  HostName 127.0.0.1
-  Port 2022
-  ProxyCommand corkscrew server.pythonmoo.co.uk 80 %h %p
-  DynamicForward 1080
-  User thomas
-
-Host opls
-  HostName bio.positive-dedicated.net
-  User thomaswood
+#Compression yes
 
 Host osm
   HostName dev.openstreetmap.org
@@ -28,18 +11,11 @@ Host errol
   HostName errol.openstreetmap.org
   User edgemaster
 
-Host doc
-  HostName shell3.doc.ic.ac.uk
-
-Host dougal
-  HostName dougal.union.ic.ac.uk
-  User tw1509
-
-Host doc *.doc.ic.ac.uk
-  User tw1509
-  ForwardX11 yes
-  DynamicForward 1081
-
 Host bitbucket.org github.com
   User git
   IdentityFile ~/.ssh/id_git
+
+Host aur aur.archlinux.org
+  HostName aur.archlinux.org
+  User aur
+  IdentityFile ~/.ssh/aur_id_rsa

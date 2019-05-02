@@ -1,4 +1,9 @@
+# Vim
+Session.vim
 *.swp
+*.swo
+
+# Binaries
 *.o
 *.core
 
@@ -10,6 +15,8 @@
 *.fdb_latexmk
 *.bbl
 *.blg
+*.fdb_latexmk
+*.fls
 
 *.gz
 *.tgz

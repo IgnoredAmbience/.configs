@@ -1,4 +1,4 @@
-Config { font = "xft:dejavu sans-6"
+Config { font = "xft:dejavu sans-7"
        , bgColor = "black"
        , fgColor = "gray"
        , position = Top
@@ -9,11 +9,9 @@ Config { font = "xft:dejavu sans-6"
     		    , Run Date "%a %b %d %Y %H:%M:%S" "date" 10
                     , Run StdinReader
                     , Run MPD ["-t", "<statei> <artist> - <title>", "--", "-P", "▶", "-S", "■"] 10
-                    , Run BatteryP ["BAT0"] ["-t", "AC: <acstatus> Bat: <left>% <timeleft>", "--", "-f", "AC0/online"] 10
-                    , Run Wireless "wlp2s0" [] 100
                     , Run PipeReader ".xmobarmsg.fifo" "status"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% } %mpd% %status% { %battery% | %wlp2s0wi% | %cpu% %memory% %swap% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% } %mpd% %status% { %cpu% %memory% %swap% | <fc=#ee9a00>%date%</fc>"
        }
