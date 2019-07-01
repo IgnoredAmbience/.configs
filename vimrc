@@ -1,6 +1,3 @@
-execute pathogen#infect()
-execute "Helptags"
-
 " Tabbing
 set expandtab
 set shiftwidth=2
