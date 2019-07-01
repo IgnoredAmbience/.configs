@@ -10,3 +10,5 @@ endif
 " Comments start with * to end of line. `* escapes the asterisk.
 syn match simsigComment /\(^\|[^`]\)\*.*$/
 hi def link simsigComment Comment
+
+let b:current_syntax = "simsig"
