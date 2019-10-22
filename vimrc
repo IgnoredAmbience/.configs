@@ -3,7 +3,7 @@ filetype off
 execute pathogen#infect()
 Helptags
 
-" Set local leader to \ (as well as leader)
+" Set local leader to , (Leader is \)
 let maplocalleader = ","
 
 " Tabbing
@@ -25,7 +25,6 @@ colorscheme inkpot
 
 filetype plugin indent on
 syntax on
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Maps Coquille commands to CoqIDE default key bindings
 au FileType coq call coquille#CoqideMapping()
@@ -35,6 +34,19 @@ let g:localvimrc_whitelist='.*/jscert[^/]*/coq/.*'
 " Syntastic overrides
 let g:syntastic_mode_map = { "mode": "active", "active_filetypes": [], "passive_filetypes": ["python"] }
 let g:syntastic_go_checkers = ["go"]
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_aggregate_errors = 1
+
+autocmd User AirlineAfterInit call SetSyntasticSigns()
+function! SetSyntasticSigns()
+  " The below aren't spaces, but Braille Blank characters. Vim doesn't like spaces.
+  let g:syntastic_error_symbol         = "⠀" . g:airline_left_sep
+  let g:syntastic_warning_symbol       = "⠀" . g:airline_left_alt_sep
+  let g:syntastic_style_error_symbol   = "⠀" . g:airline_right_sep
+  let g:syntastic_style_warning_symbol = "⠀" . g:airline_right_alt_sep
+endfunction
 
 let g:pymode_options = 0
 let g:pymode_folding = 0
@@ -51,7 +63,8 @@ set tags=./tags;,./TAGS;
 set mouse=a
 set ttymouse=xterm2
 
-set guioptions=acimg
+set guioptions=aceig
+set guifont=Inconsolata\ 10
 
 " Search highlight
 set hlsearch
@@ -61,6 +74,10 @@ map <silent> <Leader><Leader> :noh<cr>
 set incsearch
 
 let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = ""
 
 let g:tex_flavor='pdflatex'
 
@@ -100,6 +117,8 @@ augroup myvimrchooks
   autocmd bufwritepost .vimrc source ~/.vimrc | redraw | echo 'vimrc reloaded'
 augroup END
 
+command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
+
 " Additional keybindings for window splits:
 nmap <C-W><S-Left>  :topleft  vnew<CR>
 nmap <C-W><S-Right> :botright vnew<CR>
@@ -125,7 +144,6 @@ let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
 function! OpamConfMerlin()
   let l:dir = s:opam_share_dir . "/merlin/vim"
   execute "set rtp+=" . l:dir
-  let g:syntastic_ocaml_checkers = ['merlin']
 endfunction
 let s:opam_configuration['merlin'] = function('OpamConfMerlin')
 
@@ -139,10 +157,11 @@ for tool in s:opam_packages
   endif
 endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
-" ## added by OPAM user-setup for vim / ocp-indent ## 45f55a31226d7aca863230411aa8ada2 ## you can edit, but keep this line
-if count(s:opam_available_tools,"ocp-indent") == 0
-  source "/home/thomas/.opam/4.04.0/share/vim/syntax/ocp-indent.vim"
-endif
-" ## end of OPAM user-setup addition for vim / ocp-indent ## keep this line
+let g:syntastic_ocaml_checkers = ['merlin']
 
 set secure
+" ## added by OPAM user-setup for vim / ocp-indent ## cf1253c7dd3831ad444f3ae2e75765ca ## you can edit, but keep this line
+if count(s:opam_available_tools,"ocp-indent") == 0
+  source "/home/thomas/.opam/4.04.2/share/ocp-indent/vim/indent/ocaml.vim"
+endif
+" ## end of OPAM user-setup addition for vim / ocp-indent ## keep this line
