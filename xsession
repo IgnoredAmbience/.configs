@@ -21,13 +21,6 @@ export SSH_AUTH_SOCK
 stalonetray &
 xscreensaver -no-splash &
 
-# Recompile if required
-if `ldd ~/.xmonad/xmonad-* | grep "not found" >/dev/null`
-then
-  echo "Deleting bad xmonad"
-  rm ~/.xmonad/xmonad-*
-fi
-
 export LIBOVERLAY_SCROLLBAR=0
 export SWT_GTK3=0
 
